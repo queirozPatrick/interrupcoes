@@ -23,7 +23,7 @@ volatile uint32_t last_time_b = 0;
  
 // Buffer para números na matriz (exemplo: 0 a 9)
 bool numbers[10][NUM_PIXELS] = {
-    // Número 0
+    // Número 00
     { 
         0, 1, 1, 1, 0,
         0, 1, 0, 1, 0,
@@ -31,7 +31,7 @@ bool numbers[10][NUM_PIXELS] = {
         0, 1, 0, 1, 0,
         0, 1, 1, 1, 0
     },
-    // Número 1
+    // Número 01
     { 
         0, 1, 1, 1, 0,
         0, 0, 1, 0, 0,
@@ -39,7 +39,7 @@ bool numbers[10][NUM_PIXELS] = {
         0, 1, 1, 0, 0,
         0, 0, 1, 0, 0
     },
-    // Número 2
+    // Número 02
     { 
         0, 1, 1, 1, 0,
         0, 1, 0, 0, 0,
@@ -47,7 +47,7 @@ bool numbers[10][NUM_PIXELS] = {
         0, 0, 0, 1, 0,
         0, 1, 1, 1, 0
     },
-    // Número 3
+    // Número 03
      {
         0, 1, 1, 1, 0,
         0, 0, 0, 1, 0,
@@ -55,7 +55,7 @@ bool numbers[10][NUM_PIXELS] = {
         0, 0, 0, 1, 0,
         0, 1, 1, 1, 0
     },
-    // Número 4
+    // Número 04
     { 
         0, 1, 0, 0, 0,
         0, 0, 0, 1, 0,
@@ -63,7 +63,7 @@ bool numbers[10][NUM_PIXELS] = {
         0, 1, 0, 1, 0,
         0, 1, 0, 1, 0
     },
-    // Número 5
+    // Número 05
     { 
         0, 1, 1, 1, 0,
         0, 0, 0, 1, 0,
@@ -71,7 +71,7 @@ bool numbers[10][NUM_PIXELS] = {
         0, 1, 0, 0, 0,
         0, 1, 1, 1, 0
     },
-    // Número 6
+    // Número 06
     { 
         0, 1, 1, 1, 0,
         0, 1, 0, 1, 0,
@@ -79,7 +79,7 @@ bool numbers[10][NUM_PIXELS] = {
         0, 1, 0, 0, 0,
         0, 1, 1, 1, 0
     },
-    // Número 7
+    // Número 07
     { 
         0, 1, 0, 0, 0,
         0, 0, 0, 1, 0,
@@ -87,7 +87,7 @@ bool numbers[10][NUM_PIXELS] = {
         0, 1, 0, 1, 0,
         0, 1, 1, 1, 0
     },
-    // Número 8
+    // Número 08
     { 
         0, 1, 1, 1, 0,
         0, 1, 0, 1, 0,
@@ -95,7 +95,7 @@ bool numbers[10][NUM_PIXELS] = {
         0, 1, 0, 1, 0,
         0, 1, 1, 1, 0
     },
-    // Número 9
+    // Número 09
     { 
         0, 1, 1, 1, 0,
         0, 0, 0, 1, 0,
