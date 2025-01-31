@@ -72,4 +72,4 @@ O código está organizado da seguinte forma:
 ### Passos
 1. Clone este repositório:
    ```bash
-   git clone <[URL_DO_REPOSITORIO](https://github.com/queirozPatrick/interrupcoes)>
+   git clone <https://github.com/queirozPatrick/interrupcoes>
