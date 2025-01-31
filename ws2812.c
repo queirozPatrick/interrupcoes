@@ -110,33 +110,41 @@ bool numbers[10][NUM_PIXELS] = {
 static inline uint32_t urgb_u32(uint8_t r, uint8_t g, uint8_t b) {
     return ((uint32_t)(r) << 8) | ((uint32_t)(g) << 16) | (uint32_t)(b); 
 } 
- 
+
 static inline void put_pixel(uint32_t pixel_grb) {
     pio_sm_put_blocking(pio0, 0, pixel_grb << 8u); 
-} 
- 
+}
+
+// Função para ajustar brilho
+uint32_t ajustarBrilho(uint8_t r, uint8_t g, uint8_t b, float fator) {
+    return urgb_u32((uint8_t)(r * fator), (uint8_t)(g * fator), (uint8_t)(b * fator));
+}
+
 void display_number(int number) {
-    uint32_t color = urgb_u32(0, 50, 150); // Azul para a matriz
+    float brilho = 0.1; // Reduz brilho para 20%
+    uint32_t color = ajustarBrilho(148, 0, 211, brilho); // roxo com brilho reduzido
+    
     for (int i = 0; i < NUM_PIXELS; i++) {
         put_pixel(numbers[number][i] ? color : 0);
     } 
-} 
- 
+}
+
 void gpio_irq_handler(uint gpio, uint32_t events) {
     uint32_t current_time = to_us_since_boot(get_absolute_time());
- 
-    if (gpio == BUTTON_A && current_time - last_time_a > 200000) {
+
+    if (gpio == BUTTON_A && current_time - last_time_a > 400000) {
         last_time_a = current_time;
         current_number = (current_number + 1) % 10; // Incrementa número
         display_number(current_number);
     } 
- 
-    if (gpio == BUTTON_B && current_time - last_time_b > 200000) {
+
+    if (gpio == BUTTON_B && current_time - last_time_b > 400000) {
         last_time_b = current_time;
         current_number = (current_number - 1 + 10) % 10; // Decrementa número
         display_number(current_number);
     } 
-} 
+}
+
  
 int main() {
     stdio_init_all();
@@ -165,9 +173,8 @@ int main() {
     uint offset = pio_add_program(pio, &ws2812_program); 
     ws2812_program_init(pio, sm, offset, WS2812_PIN, 800000, IS_RGBW); 
  
-    // Loop principal
-    while (1) {
-        // Pisca o LED RGB vermelho 5 vezes por segundo
+    // Loop principal, pisca o LED RGB vermelho 5 vezes por segundo.
+    while (true) {
         gpio_put(LED_RGB_R, 1);
         sleep_ms(100);
         gpio_put(LED_RGB_R, 0);
