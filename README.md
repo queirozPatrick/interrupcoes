@@ -33,6 +33,9 @@ O objetivo é criar um sistema que combine hardware e software para:
 
 ---
 
+**Video do projeto:**
+<https://youtube.com/shorts/zNp-G9gJa2c?feature=share>
+
 ## 📂 Organização do Código
 
 ### Arquivos Incluídos
